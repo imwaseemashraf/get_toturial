@@ -41,12 +41,13 @@ class HomePage extends StatelessWidget {
         onPressed: () {
           Get.snackbar(
             'waseem ashraf',
-            "subscribe to y youtube chennal",
-            duration: Duration(seconds: 10),
+            "subscribe to y youtube channel",
+            duration: Duration(seconds: 2),
             borderRadius: 12,
             margin: EdgeInsets.only(bottom: 100, left: 20, right: 20),
             backgroundColor: Colors.grey,
             snackPosition: SnackPosition.BOTTOM,
+            padding: EdgeInsets.only(top: 20, bottom: 20, right: 20, left: 20),
             icon: Icon(Icons.person),
           );
         },
