@@ -25,13 +25,54 @@ class lightDarkThem extends StatelessWidget {
                           EdgeInsets.symmetric(horizontal: 20, vertical: 20),
                       titlePadding: EdgeInsets.symmetric(vertical: 20),
                       middleText: 'are sure to learn the get x ',
-                      textConfirm: 'ok',
+                      confirm: TextButton(
+                          onPressed: () {
+                            Get.back();
+                          },
+                          child: Text('ok')),
                       confirmTextColor: Colors.white,
                       textCancel: 'cancel');
                 },
               ),
             ),
-          )
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Card(
+              child: ListTile(
+                title: Text('Bottom sheet '),
+                subtitle: Text('subscribe to my channel'),
+                onTap: () {
+                  Get.bottomSheet(
+                    Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.grey,
+                      ),
+                      child: Column(
+                        children: [
+                          ListTile(
+                            leading: Icon(Icons.light_mode),
+                            title: Text('Light them mode '),
+                            onTap: () {
+                              Get.changeTheme(ThemeData.light());
+                            },
+                          ),
+                          ListTile(
+                            leading: Icon(Icons.light_mode),
+                            title: Text('dark theme mode '),
+                            onTap: () {
+                              Get.changeTheme(ThemeData.dark());
+                            },
+                          ),
+                        ],
+                      ),
+                    ),
+                  );
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );
